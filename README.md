@@ -1,8 +1,8 @@
 # Marshmellow
 A simple networking SDK for DevRev assignment.
 
-**Marshmellow is a very basic library that is built on top of apple's URLSession()**
-**The main build blocks of are following 2 classes**
+**Marshmellow is a very basic library that is built on top of apple's URLSession()**<br>
+**The main build blocks of are following 2 classes:-**
 
 <details>
 <summary>public class MellowRequestBuilder</summary>
