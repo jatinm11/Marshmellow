@@ -58,5 +58,5 @@ marshmellow.makeRequest(with: builder, type: MyResponse.self) { result in
 ```
 
 That's it! 🥂 <br><br>
-P.S - **This was only built for the assignment purpose and in no way is a complete library with huge scope of improvements** 😬 <br><br> 
+P.S - **This was only built for the assignment purpose and in no way is a complete library and has huge scope of improvements** 😬 <br><br> 
 P.P.S - **I hope you love eating Marshmellows** 😉
