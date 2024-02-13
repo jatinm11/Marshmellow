@@ -26,26 +26,31 @@ public class MellowRequestBuilder: MellowRequestProtcol {
         self.parameters = parameters
     }
     
+    @discardableResult
     public func set(method: MellowHttpMethod) -> Self {
         self.method = method
         return self
     }
     
+    @discardableResult
     public func set(path: String) -> Self {
         self.path = path
         return self
     }
     
+    @discardableResult
     public func set(scheme: String) -> Self {
         self.scheme = scheme
         return self
     }
     
+    @discardableResult
     public func set(headers: [String : String]?) -> Self {
         self.headers = headers
         return self
     }
     
+    @discardableResult
     public func set(parameters: MellowRequestParams) -> Self {
         self.parameters = parameters
         return self
