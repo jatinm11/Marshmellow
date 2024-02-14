@@ -5,7 +5,7 @@ A simple networking SDK for DevRev assignment.
 **The main building blocks of this sdk are following 2 classes:-**
 
 <details>
-<summary>public class MellowRequestBuilder</summary>
+<summary>public class MellowRequestBuilder (Expand)</summary>
   <br>
 This class is responsible for building URL requests based on provided parameters.
   <br><br>
@@ -29,7 +29,7 @@ Key parameters include:
 </details>
 
 <details>
-<summary>public class Marshmellow</summary>
+<summary>public class Marshmellow (Expand)</summary>
   <br>
 This class conforms to the MellowNetworkProtocol protocol and provides implementation for making network requests. It includes methods to set the key decoding strategy and make requests using the provided builder. 
   <br><br>
