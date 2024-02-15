@@ -1,0 +1,74 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios17.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MarshmellowXC
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+@_exported import MarshmellowXC
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum MellowRequestParams {
+  case body([Swift.String : Any]?)
+  case url([Swift.String : Swift.String]?)
+}
+public class MellowRequestBuilder : MarshmellowXC.MellowRequestProtcol {
+  required public init(baseURL: Foundation.URL, path: Swift.String, scheme: Swift.String = "https")
+  public init(baseURL: Foundation.URL, path: Swift.String, method: MarshmellowXC.MellowHttpMethod = .get, scheme: Swift.String = "https", headers: [Swift.String : Swift.String]? = nil, parameters: MarshmellowXC.MellowRequestParams? = nil)
+  @discardableResult
+  public func set(method: MarshmellowXC.MellowHttpMethod) -> Self
+  @discardableResult
+  public func set(path: Swift.String) -> Self
+  @discardableResult
+  public func set(scheme: Swift.String) -> Self
+  @discardableResult
+  public func set(headers: [Swift.String : Swift.String]?) -> Self
+  @discardableResult
+  public func set(parameters: MarshmellowXC.MellowRequestParams) -> Self
+  public func buildRequest() -> (request: Foundation.URLRequest?, error: MarshmellowXC.MellowError?)
+  @objc deinit
+}
+public enum MellowError : Swift.Error {
+  case invalidURL(Foundation.URL?)
+  case invalidResponse(Foundation.HTTPURLResponse?)
+  case invalidData(Foundation.Data?)
+  case statusCode(Swift.Int)
+  case noData
+  case unableToComplete
+}
+public enum MellowHttpMethod : Swift.String {
+  case get
+  case post
+  case put
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol MellowNetworkProtocol {
+  func makeRequest<T>(with builder: MarshmellowXC.MellowRequestBuilder, type: T.Type, completion: @escaping (Swift.Result<T, MarshmellowXC.MellowError>) -> Swift.Void) where T : Swift.Decodable
+}
+public class Marshmellow : MarshmellowXC.MellowNetworkProtocol {
+  public init()
+  public func setKeyDecodingStrategy(_ strategy: Foundation.JSONDecoder.KeyDecodingStrategy)
+  public func makeRequest<T>(with builder: MarshmellowXC.MellowRequestBuilder, type: T.Type, completion: @escaping (Swift.Result<T, MarshmellowXC.MellowError>) -> Swift.Void) where T : Swift.Decodable
+  @objc deinit
+}
+public protocol MellowRequestProtcol {
+  init(baseURL: Foundation.URL, path: Swift.String, scheme: Swift.String)
+  @discardableResult
+  func set(method: MarshmellowXC.MellowHttpMethod) -> Self
+  @discardableResult
+  func set(path: Swift.String) -> Self
+  @discardableResult
+  func set(scheme: Swift.String) -> Self
+  @discardableResult
+  func set(headers: [Swift.String : Swift.String]?) -> Self
+  @discardableResult
+  func set(parameters: MarshmellowXC.MellowRequestParams) -> Self
+}
+extension MarshmellowXC.MellowHttpMethod : Swift.Equatable {}
+extension MarshmellowXC.MellowHttpMethod : Swift.Hashable {}
+extension MarshmellowXC.MellowHttpMethod : Swift.RawRepresentable {}

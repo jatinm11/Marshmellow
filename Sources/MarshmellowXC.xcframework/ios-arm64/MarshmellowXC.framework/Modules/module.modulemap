@@ -1,0 +1,11 @@
+framework module MarshmellowXC {
+  umbrella header "MarshmellowXC.h"
+  export *
+
+  module * { export * }
+}
+
+module MarshmellowXC.Swift {
+  header "MarshmellowXC-Swift.h"
+  requires objc
+}
