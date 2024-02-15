@@ -1,7 +1,13 @@
 # Marshmellow
 A simple networking SDK for DevRev assignment.
+**Marshmellow is a very basic library that is built on top of apple's URLSession()**<br><br>
+SPR Link -> https://swiftpackageregistry.com/jatinm11/Marshmellow
 
-**Marshmellow is a very basic library that is built on top of apple's URLSession()**<br>
+To start things off, import using the following block :- <br>
+``` swift
+import MarshMellowXC
+  ```
+
 **The main building blocks of this sdk are following 2 classes:-**
 
 <details>
@@ -57,6 +63,6 @@ marshmellow.makeRequest(with: builder, type: MyResponse.self) { result in
 }
 ```
 
-That's it! 🥂 <br><br>
+<br>That's it! 🥂 <br><br>
 P.S - **This was only built for the assignment purpose and in no way is a complete library and has huge scope of improvements** 😬 <br><br> 
 P.P.S - **I hope you love eating Marshmellows** 😉
