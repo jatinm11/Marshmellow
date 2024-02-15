@@ -1,0 +1,11 @@
+framework module Marshmellow {
+  umbrella header "Marshmellow.h"
+  export *
+
+  module * { export * }
+}
+
+module Marshmellow.Swift {
+  header "Marshmellow-Swift.h"
+  requires objc
+}
